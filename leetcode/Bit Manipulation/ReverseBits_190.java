@@ -30,7 +30,7 @@ Note:
 
 */
 
-public class ReverseBits {
+public class ReverseBits_190 {
     // you need treat n as an unsigned value
     static int reverseBits(int n) {
         int rev = 0;

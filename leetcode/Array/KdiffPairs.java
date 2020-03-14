@@ -1,5 +1,7 @@
 /*
 
+#TAGS = {Array, Two Pointers}
+
 532. K-diff Pairs in an Array
 
  Given an array of integers and an integer k, you need to find the number of unique k-diff pairs in the array.

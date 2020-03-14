@@ -40,7 +40,7 @@ class Solution {
     }
 }
 
-public class CountPrimes {
+public class CountPrimes_204 {
     public static void main (String[] args) {
         System.out.println(new Solution().countPrimes(550));
     }

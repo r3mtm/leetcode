@@ -54,7 +54,7 @@ Explanation: The number "-91283472332" is out of the range of a 32-bit signed in
 
 */
 
-class StringToInteger {
+class StringToInteger_8 {
     static int myAtoi(String str) {
         int strLen = str.length(), i, digit, number = 0, prevNum, reversed;
         boolean isNegative = false;
