@@ -1,6 +1,6 @@
 /*
 
-TAGS={Dynamic Programming, Divide and Conquer}
+TAGS={Dynamic Programming, Divide and Conquer, Array}
 
 53. Maximum Subarray
 
@@ -22,17 +22,14 @@ the divide and conquer approach, which is more subtle.
 
 class Solution {
     public int maxSubArray(int[] a) {
-        int []index = {0, 0};
 	    int max = a[0],  currMax = a[0];
 	    for (int i = 1; i < a.length; ++i) {
 	        currMax += a[i];
 	        
             if (currMax < a[i]) {
                 currMax = a[i];
-                if (max < currMax) {
-                    max = currMax;
-                } 
-            } else if (max < currMax) {
+            }
+            if (max < currMax) {
                 max = currMax;
             }
 	    }

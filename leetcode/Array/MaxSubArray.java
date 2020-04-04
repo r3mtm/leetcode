@@ -3,7 +3,9 @@
 Given an array arr of N integers. Find the contiguous sub-array with maximum sum.
 
 Input:
-The first line of input contains an integer T denoting the number of test cases. The description of T test cases follows. The first line of each test case contains a single integer N denoting the size of array. The second line contains N space-separated integers A1, A2, ..., AN denoting the elements of the array.
+The first line of input contains an integer T denoting the number of test cases. The description of T test cases follows.
+The first line of each test case contains a single integer N denoting the size of array.
+The second line contains N space-separated integers A1, A2, ..., AN denoting the elements of the array.
 
 Output:
 Print the maximum sum of the contiguous sub-array in a separate line for each test case.
@@ -49,28 +51,27 @@ class MaxSubArray {
 		}
 	}
 	
-	static void findMaxSubArray(int a[]) {
-	    int []index = {0, 0};
-	    int max = a[0],  currMax = a[0], bcIndex = 0;
-	    for (int i = 1; i < a.length; ++i) {
-            currMax += a[i];
-            
-            if (currMax < a[i]) {
-                currMax = a[i];
+	public int maxSubArray(int[] nums) {
+        int prevSum = nums[0], sum = nums[0];
+        int left = 0, right = 0, bcIndex = 0;
+        for (int i = 1; i < nums.length; ++i) {
+            sum += nums[i];
+            if (sum < nums[i]) {
+                sum = nums[i];
                 bcIndex = i;
-                if (max < currMax) {
-                    index[0] = index[1] = i;
-                    max = currMax;
-                } 
-            } else if (max < currMax) {
-                max = currMax;
-                index[1] = i;
-                if (bcIndex != index[0]) {
-                    index[0] = bcIndex;
+                if (sum > prevSum) {
+                    prevSum = sum;
+                    left = right = i;
+                }
+            } else if (sum > prevSum) {
+                prevSum = sum;
+                right = i;
+                if (left < bcIndex) {
+                    left = bcIndex;
                 }
             }
         }
-	    System.out.println("StartIndex = " + index[0] + " EndIndex = " + index[1]);
-	    System.out.println(max);
-	}
+        System.out.println("Left = " + left + " right = " + right); //Range having the max. continuous sum (Optional).
+        System.out.println(prevSum); //Max Sum
+    }
 }
