@@ -1,1 +1,1 @@
-Problems that I've solved at Leetcode and the algorithms that I learned while solving them.
+Problems that I've solved at Leetcode and the algorithms I learned while solving them.
