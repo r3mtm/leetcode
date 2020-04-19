@@ -26,6 +26,8 @@ Output: -1
 */
 
 class Solution {
+    //Time - O(log(N))
+    //Space - O(1)
     public int search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
         int mid;
