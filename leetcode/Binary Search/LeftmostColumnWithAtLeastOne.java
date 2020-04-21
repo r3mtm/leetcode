@@ -102,6 +102,7 @@ class Solution {
     }
     */
 
+    /*
     //0ms solution
     // Here we do binary search on every row, but the right boundary
     // will be set to the last found column on the previous row, since
@@ -134,5 +135,28 @@ class Solution {
             return -1;
         }         
         return lastPos;
+    }
+    */
+ 
+    // 0ms solution
+    // Time - O(max(row, col))
+    // Space - O(1)
+    public int leftMostColumnWithOne(BinaryMatrix binaryMatrix) {
+        int row = binaryMatrix.dimensions().get(0);
+        int col = binaryMatrix.dimensions().get(1);
+        int r = 0, c = col - 1;
+        int lastPos = col;
+        while (r < row && c >= 0) {
+            if (binaryMatrix.get(r, c) == 0) {
+                ++r;
+            } else {
+                lastPos = c;
+                --c;
+            }
+        }
+        if (lastPos < col) {
+            return lastPos;
+        }
+        return -1;
     }
 }
